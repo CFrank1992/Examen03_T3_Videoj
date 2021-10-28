@@ -3,7 +3,9 @@ package com.example.examen03_t3_videoj.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,8 +34,15 @@ public class repositoryAdapter extends RecyclerView.Adapter<repositoryAdapter.Na
     public void onBindViewHolder(NameViewHolder holder, int position) {
         TextView tv = holder.itemView.findViewById(R.id.tvNames);
         String value = data.get(position);
-
         tv.setText(value);
+
+        Button btnClick  = holder.itemView.findViewById(R.id.btnClick);
+        btnClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(holder.itemView.getContext(), value, Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

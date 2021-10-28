@@ -29,8 +29,8 @@ public class DetailActivity1 extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(getApplicationContext(), DetailActivity3.class);
-                startActivity(intent3);
+                Intent intent = new Intent(getApplicationContext(), DetailActivity3.class);
+                startActivity(intent);
             }
         });
 
