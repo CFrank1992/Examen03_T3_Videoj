@@ -1,25 +1,25 @@
 package com.example.examen03_t3_videoj.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.examen03_t3_videoj.DetailActivity3;
 import com.example.examen03_t3_videoj.R;
 import com.example.examen03_t3_videoj.entities.Repository;
 
 import java.util.List;
 
-public class repositoryAdapter extends RecyclerView.Adapter<repositoryAdapter.NameViewHolder> {
+public class repositoryAdapter2 extends RecyclerView.Adapter<repositoryAdapter2.NameViewHolder> {
 
     private List<Repository> data;
 
-    public repositoryAdapter(List<Repository> data) {
+    public repositoryAdapter2(List<Repository> data) {
         this.data = data;
     }
 
@@ -32,7 +32,7 @@ public class repositoryAdapter extends RecyclerView.Adapter<repositoryAdapter.Na
     }
 
     @Override
-    public void onBindViewHolder(repositoryAdapter.NameViewHolder holder, int position) {
+    public void onBindViewHolder(repositoryAdapter2.NameViewHolder holder, int position) {
         TextView tvNames = holder.itemView.findViewById(R.id.tvNames);
         TextView tvType = holder.itemView.findViewById(R.id.tvType);
         Repository value = data.get(position);
@@ -40,11 +40,13 @@ public class repositoryAdapter extends RecyclerView.Adapter<repositoryAdapter.Na
         tvNames.setText(String.valueOf(value.getNombre()));
         tvType.setText(String.valueOf(value.getTipo()));
 /*
-        Button btnClick  = holder.itemView.findViewById(R.id.btnClick);
-        btnClick.setOnClickListener(new View.OnClickListener() {
+        Button button3 = findViewById(R.id.detailButton);
+
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), value, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), DetailActivity3.class);
+                startActivity(intent);
             }
         });
 */
